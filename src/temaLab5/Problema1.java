@@ -69,15 +69,15 @@ public class Problema1 {
             s = s + nr3 % 10;
             nr3 = nr3 / 10;
         }
-                if ( Math.log10(s)+1 > 1) {
-                    while (s != 0) {
-                        s1 = s1 + s % 10;
-                        s = s / 10;
-                    }
-                    return s1;
-                }
-                else
-    return s;
+        if ( Math.log10(s)+1 > 1) {
+            while (s != 0) {
+                s1 = s1 + s % 10;
+                s = s / 10;
+            }
+            return s1;
+        }
+        else
+            return s;
     }
 
 
@@ -87,26 +87,26 @@ public class Problema1 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Introdu un numar pozitiv!");
-                int n;
-                int sum = 0 ;
-                int produs = 1;
-                int cifre;
-                int k = 0;
-                int l;
-                int m;
+        int n;
+        int sum = 0 ;
+        int produs = 1;
+        int cifre;
+        int k = 0;
+        int l;
+        int m;
         n = in.nextInt();
         if (n<=0) {
             System.out.println("Numarul introdus nu este pozitiv");
         }
         else
             k = maxDigit(n); //apelam metoda maxDigit
-            l = minDigit(n); //apelam metoda minDigit
-           //Numarul de cifre il calculam cu logaritmi( 10 la ce putere este egal cu numarul de sub logaritm?)
-            cifre = (int)(Math.log10(n)+1);
-            m = cifraControl(n); //apelam metoda cifraControl
+        l = minDigit(n); //apelam metoda minDigit
+        //Numarul de cifre il calculam cu logaritmi( 10 la ce putere este egal cu numarul de sub logaritm?)
+        cifre = (int)(Math.log10(n)+1);
+        m = cifraControl(n); //apelam metoda cifraControl
         while( n != 0 ) {
 
-           //suma si produsul se calculeaza direct
+            //suma si produsul se calculeaza direct
             //suma este restul impartirii la 10 adunat cu restul impartirii la 10 a numarului impartit
             //la 10, adunat cu restul impartirii la 10 al numarului impartit la 100 etc
             sum += n % 10;
